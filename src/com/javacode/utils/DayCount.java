@@ -35,8 +35,8 @@ public class DayCount {
 	
 	private static Calendar juBegin() {
 		Calendar begin = Calendar.getInstance();
-		begin.set(Calendar.MONTH, 3);
-		begin.set(Calendar.DAY_OF_MONTH, 16);
+		begin.set(Calendar.MONTH, 4);
+		begin.set(Calendar.DAY_OF_MONTH, 15);
 		begin.getTime();
 		return begin;
 	}

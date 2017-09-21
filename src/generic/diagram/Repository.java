@@ -1,8 +1,6 @@
-package generic.model;
-
-import java.io.Serializable;
+package generic.diagram;
+import java.util.LinkedList;
 import java.util.List;
-
 
 
 /**
@@ -10,16 +8,17 @@ import java.util.List;
  * <!--  end-user-doc  -->
  * @generated
  */
-public  interface CRUDInterface<T extends Serializable> 
+
+public class Repository<T>
 {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
-	 * @ordered
 	 */
-	
-	public void delete(int obj) ;
+	public Repository(){
+		super();
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -28,7 +27,10 @@ public  interface CRUDInterface<T extends Serializable>
 	 * @ordered
 	 */
 	
-	public List<T> findAll() ;
+	public T save(T entity) {
+		// TODO implement me
+		return null;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -37,7 +39,9 @@ public  interface CRUDInterface<T extends Serializable>
 	 * @ordered
 	 */
 	
-	public T get(int obj) ;
+	public void delete(int id) {
+		// TODO implement me
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -46,8 +50,22 @@ public  interface CRUDInterface<T extends Serializable>
 	 * @ordered
 	 */
 	
-	public T save(T obj) ;
+	public T get(int id) {
+		// TODO implement me
+		return null;
+	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+	
+	public List<T> findAll() {
+		// TODO implement me
+		return null;
+	}
 
 }
 

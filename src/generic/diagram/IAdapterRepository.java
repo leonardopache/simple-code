@@ -1,4 +1,5 @@
-package generic.model;
+package generic.diagram;
+
 
 
 /**
@@ -6,16 +7,17 @@ package generic.model;
  * <!--  end-user-doc  -->
  * @generated
  */
-
-public class WalletImpl extends GenericCRUD<T extends Serializable> {
+public  interface IAdapterRepository<T> 
+{
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
 	 * @generated
+	 * @ordered
 	 */
-	public WalletImpl(){
-		super();
-	}
+	
+	public Repository<T> getRepositoryAdapter() ;
+
 
 }
 

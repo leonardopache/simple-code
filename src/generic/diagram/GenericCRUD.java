@@ -1,7 +1,6 @@
-package generic.model;
-import java.io.Serializable;
-import java.util.List;
+package generic.diagram;
 
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -9,17 +8,8 @@ import java.util.List;
  * @generated
  */
 
-public class GenericCRUD<T extends Serializable> implements CRUDInterface<T>
+public abstract class GenericCRUD<T extends Entity> extends GenericRepository<T> implements CRUDInterface<T>
 {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public T entity;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
@@ -32,13 +22,13 @@ public class GenericCRUD<T extends Serializable> implements CRUDInterface<T>
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!--  end-user-doc  -->
+	 * @return 
 	 * @generated
 	 * @ordered
 	 */
 	
-	public T save(T obj) {
-		// TODO implement me
-		return null;
+	public void delete(int id) {
+		getRepository().getRepositoryAdapter().delete(id);
 	}
 
 	/**
@@ -48,9 +38,19 @@ public class GenericCRUD<T extends Serializable> implements CRUDInterface<T>
 	 * @ordered
 	 */
 	
-	public T get(int obj) {
-		// TODO implement me
-		return null;
+	public T save(T entity) {
+		return getRepository().getRepositoryAdapter().save(entity);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!--  end-user-doc  -->
+	 * @generated
+	 * @ordered
+	 */
+	
+	public T get(int id) {
+		return getRepository().getRepositoryAdapter().get(id);
 	}
 
 	/**
@@ -61,19 +61,7 @@ public class GenericCRUD<T extends Serializable> implements CRUDInterface<T>
 	 */
 	
 	public List<T> findAll() {
-		// TODO implement me
-		return null;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 * @ordered
-	 */
-	
-	public void delete(int obj) {
-		// TODO implement me
+		return getRepository().getRepositoryAdapter().findAll();
 	}
 
 }
