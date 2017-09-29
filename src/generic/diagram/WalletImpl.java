@@ -1,5 +1,6 @@
 package generic.diagram;
 
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,8 +16,12 @@ public class WalletImpl extends GenericCRUD<MyClazz>
 	 * @generated
 	 */
 	public WalletImpl(){
-		super();
+		List<MyClazz> allClasses = super.findAll();
 	}
-
+	
+	
+	public MyClazz insertEntry(MyClazz entry){
+		return super.save(entry);
+	}
 }
 
