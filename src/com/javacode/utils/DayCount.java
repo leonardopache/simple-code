@@ -1,6 +1,8 @@
 package com.javacode.utils;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
@@ -9,8 +11,10 @@ import java.util.Calendar;
  *
  */
 public class DayCount {
-	
-	public DayCount(){
+
+	private static final String DMY_FORMATTER = "dd/MM/yyyy";
+
+	public DayCount() {
 		throw new InstantiationError("Utility class, do not instantiate!!!");
 	}
 
@@ -19,25 +23,22 @@ public class DayCount {
 	}
 
 	public static void main(String[] args) throws IOException {
-
-		System.out.println("Leo days: "+countDays(leoBegin(), Calendar.getInstance()));
-		System.out.println("Jú days: "+countDays(juBegin(), Calendar.getInstance()));
-		
-	}
-
-	private static Calendar leoBegin() {
-		Calendar begin = Calendar.getInstance();
-		begin.set(Calendar.MONTH, 5);
-		begin.set(Calendar.DAY_OF_MONTH, 1);
-		begin.getTime();
-		return begin;
+		System.out.println("Leo days: " + countDays(newCalendar("01/06/2017"), Calendar.getInstance()));
+		System.out.println("Jú days: " + countDays(newCalendar("15/05/2017"), Calendar.getInstance()));
 	}
 	
-	private static Calendar juBegin() {
+	private static Calendar newCalendar(String date) {
 		Calendar begin = Calendar.getInstance();
-		begin.set(Calendar.MONTH, 4);
-		begin.set(Calendar.DAY_OF_MONTH, 15);
-		begin.getTime();
+		begin.setTimeInMillis(dateTimeFormatter(date, DMY_FORMATTER));
 		return begin;
+	}
+
+	private static Long dateTimeFormatter(String date, String pattern) {
+		SimpleDateFormat dateFormatter = new SimpleDateFormat(pattern);
+		try {
+			return dateFormatter.parse(date).getTime();
+		} catch (ParseException e) {
+			return null;
+		}
 	}
 }
