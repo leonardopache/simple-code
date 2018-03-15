@@ -35,7 +35,6 @@ public class MyClazz implements Entity
 	 */
 	
 	public int getId() {
-		// TODO implement me
 		return 0;
 	}
 
@@ -47,7 +46,6 @@ public class MyClazz implements Entity
 	 */
 	
 	public void setId(int id) {
-		// TODO implement me
 	}
 
 }

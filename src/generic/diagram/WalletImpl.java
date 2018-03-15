@@ -21,7 +21,6 @@ public class WalletImpl extends GenericCRUD<MyClazz>
 	
 	
 	public MyClazz insertEntry(MyClazz entry){
-		//TODO TESTE
 		return super.save(entry);
 	}
 }

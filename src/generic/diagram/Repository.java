@@ -1,7 +1,5 @@
 package generic.diagram;
-import java.util.LinkedList;
 import java.util.List;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +26,6 @@ public class Repository<T>
 	 */
 	
 	public T save(T entity) {
-		// TODO implement me
 		return null;
 	}
 
@@ -40,7 +37,6 @@ public class Repository<T>
 	 */
 	
 	public void delete(int id) {
-		// TODO implement me
 	}
 
 	/**
@@ -51,7 +47,6 @@ public class Repository<T>
 	 */
 	
 	public T get(int id) {
-		// TODO implement me
 		return null;
 	}
 
@@ -63,7 +58,6 @@ public class Repository<T>
 	 */
 	
 	public List<T> findAll() {
-		// TODO implement me
 		return null;
 	}
 
